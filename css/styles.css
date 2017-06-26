@@ -1,0 +1,21 @@
+body {
+  /*font-size: 15px;*/
+}
+
+img {
+  height: 50%;
+  width: 50%;
+}
+
+.thumbnail-title {
+  display: block;
+  margin: 0;
+  padding: 4px 10px;
+
+  background: #3AD8D6;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
