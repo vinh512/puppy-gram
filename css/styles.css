@@ -1,21 +1,51 @@
 body {
-  /*font-size: 15px;*/
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Coming Soon', cursive;
+  background: rgb(153, 172, 181);
 }
 
-img {
-  height: 50%;
-  width: 50%;
+a {
+  text-decoration: none;
+}
+
+.logo-text {
+  background: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+.thumbnail-item + .thumbnail-item {
+  margin-top: 20px;
+}
+
+.thumbnail-list {
+  list-style: none;
+  /* overrides default ul padding value which indents the li items */
+  padding: 0;
 }
 
 .thumbnail-title {
   display: block;
   margin: 0;
-  padding: 4px 10px;
+  padding: 5px 10px;
 
   background: #3AD8D6;
+  background: #47ACB5;
   color: white;
+
+  font-size: 18px;
 }
 
-a {
-  text-decoration: none;
+.thumbnail-image {
+  display: block;
+  width: 100%;
+}
+
+.thumbnail-item {
+  display: block;
+  /* fallback value in case browser doesn't accept alpha */
+  border: 2px solid rgb(100%, 100%, 100%);
+  border: 2px solid rgba(100%, 100%, 100%, 0.3);
 }
