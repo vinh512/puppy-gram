@@ -16,6 +16,10 @@ a {
   text-decoration: none;
 }
 
+.main-header {
+  flex: 0 1 auto; /* do not grow, shrink as needed, auto calculate */
+}
+
 .logo-text {
   background: white;
   text-align: center;
@@ -23,16 +27,24 @@ a {
   font-size: 40px;
 }
 
+.main-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .thumbnail-item + .thumbnail-item {
   margin-top: 20px;
 }
 
 .thumbnail-list {
+  flex: 0 1 auto;
   list-style: none;
   padding: 0; /* overrides default ul padding value which indents the li items */
   white-space: nowrap; /* prevents the thumbnails from wrapping to the next line */
   overflow-x: auto; /* adds a scroll bar if thumbnails extends container */
 }
+
 
 .thumbnail-title {
   display: block;
@@ -46,7 +58,6 @@ a {
 
   white-space: nowrap; /* prevents long text from extending beyond div */
   overflow: hidden;
-
 }
 
 .thumbnail-image {
@@ -59,6 +70,11 @@ a {
   width: 120px;
   border: 2px solid rgb(100%, 100%, 100%); /* fallback value in case browser doesn't accept alpha */
   border: 2px solid rgba(100%, 100%, 100%, 0.3);
+}
+
+
+.detail-image-container {
+  flex: 1 1 auto;
 }
 
 .detail-image{
