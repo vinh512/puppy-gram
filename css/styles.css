@@ -1,4 +1,11 @@
+html, body {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+
   font-size: 10px;
   font-family: 'Roboto', sans-serif;
   font-family: 'Coming Soon', cursive;
@@ -22,8 +29,9 @@ a {
 
 .thumbnail-list {
   list-style: none;
-  /* overrides default ul padding value which indents the li items */
-  padding: 0;
+  padding: 0; /* overrides default ul padding value which indents the li items */
+  white-space: nowrap; /* prevents the thumbnails from wrapping to the next line */
+  overflow-x: auto; /* adds a scroll bar if thumbnails extends container */
 }
 
 .thumbnail-title {
@@ -31,11 +39,14 @@ a {
   margin: 0;
   padding: 5px 10px;
 
-  background: #3AD8D6;
   background: #47ACB5;
   color: white;
 
   font-size: 18px;
+
+  white-space: nowrap; /* prevents long text from extending beyond div */
+  overflow: hidden;
+
 }
 
 .thumbnail-image {
@@ -44,9 +55,9 @@ a {
 }
 
 .thumbnail-item {
-  display: block;
-  /* fallback value in case browser doesn't accept alpha */
-  border: 2px solid rgb(100%, 100%, 100%);
+  display: inline-block; /* puts the thumbnails on the same line */
+  width: 120px;
+  border: 2px solid rgb(100%, 100%, 100%); /* fallback value in case browser doesn't accept alpha */
   border: 2px solid rgba(100%, 100%, 100%, 0.3);
 }
 
