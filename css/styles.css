@@ -33,12 +33,16 @@ a {
   flex-direction: column;
 }
 
-.thumbnail-item + .thumbnail-item {
+/*.thumbnail-item + .thumbnail-item {
   margin-top: 20px;
-}
+}*/
 
 .thumbnail-list {
   flex: 0 1 auto;
+  order: 2;
+  display: flex;
+  justify-content: space-between;
+
   list-style: none;
   padding: 0; /* overrides default ul padding value which indents the li items */
   white-space: nowrap; /* prevents the thumbnails from wrapping to the next line */
@@ -67,14 +71,21 @@ a {
 
 .thumbnail-item {
   display: inline-block; /* puts the thumbnails on the same line */
-  width: 120px;
+  min-width: 120px;
+  max-width: 120px;
   border: 2px solid rgb(100%, 100%, 100%); /* fallback value in case browser doesn't accept alpha */
   border: 2px solid rgba(100%, 100%, 100%, 0.3);
 }
 
-
 .detail-image-container {
   flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-image-frame {
+  text-align: center;
 }
 
 .detail-image{
