@@ -43,6 +43,7 @@ a {
   display: flex;
   justify-content: space-between;
 
+  margin: 20px;
   list-style: none;
   padding: 0; /* overrides default ul padding value which indents the li items */
   white-space: nowrap; /* prevents the thumbnails from wrapping to the next line */
@@ -89,6 +90,8 @@ a {
 
 .detail-image {
   width: 90%;
+  /*border: 1px solid #D7D9DA;*/
+  border-radius: 10px;
 }
 
 .detail-image-title {
