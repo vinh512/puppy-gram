@@ -3,7 +3,6 @@ var DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
 var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]'
 
 function setDetails(imageUrl, titleText) {
-  'use strict';
   var detailImage = document.querySelector(DETAIL_IMAGE_SELECTOR);
   var detailTitle = document.querySelector(DETAIL_TITLE_SELECTOR);
 
@@ -18,3 +17,37 @@ function imageFromThumb(thumbnail) {
 function titleFromThumb(thumbnail) {
   return thumbnail.getAttribute('data-image-title');
 }
+
+function setDetailsFromThumb(thumbnail) {
+  setDetails(imageFromThumb(thumbnail), titleFromThumb(thumbnail));
+}
+
+function addThumbClickHandler(thumb) {
+  thumb.addEventListener('click', function(e) {
+    e.preventDefault();
+    setDetailsFromThumb(thumb);
+  });
+}
+
+function getThumbnailsArray() {
+  var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
+  var thumbnailsArray = [].slice.call(thumbnails);
+  return thumbnailsArray;
+}
+
+function initializeEvents() {
+  var thumbnails = getThumbnailsArray();
+  thumbnails.forEach(function(thumbnail) {
+    addThumbClickHandler(thumbnail);
+  });
+}
+
+initializeEvents();
+
+
+//
+// var xyz = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
+//
+// xyz.forEach(function(thumbnail) {
+//   addThumbClickHandler(thumbnail);
+// })
