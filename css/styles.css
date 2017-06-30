@@ -53,9 +53,7 @@ a {
 
 .thumbnail-title {
   display: block;
-  margin: 0;
   padding: 5px 10px;
-
   background: #47ACB5;
   color: white;
   font-size: 18px;
@@ -81,7 +79,6 @@ a {
 
 .thumbnail-item:hover {
   transform: scale(1.2);
-
 }
 
 .detail-image-container {
@@ -105,7 +102,6 @@ a {
 
 .detail-image {
   width: 90%;
-  /*border: 1px solid #D7D9DA;*/
   border-radius: 10px;
 }
 
@@ -131,4 +127,5 @@ a {
 
 .hidden-detail .thumbnail-item {
   max-width: 40%;
+  margin-top: 20px;
 }

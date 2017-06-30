@@ -5,11 +5,17 @@ var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]'
 var HIDDEN_DETAIL_CLASS = 'hidden-detail';
 var TINY_EFFECT_CLASS = 'is-tiny';
 var KEY_CODE = 27;
+var detailImage = document.querySelector(DETAIL_IMAGE_SELECTOR);
+var detailTitle = document.querySelector(DETAIL_TITLE_SELECTOR);
+var PIC_ARRAY = ['Ollie', 'Cotton', 'Max', 'Zeus_Emma', 'Lola',
+                  'Bailey', 'Gatsby', 'Bisquick', 'Duke', 'Nina'];
+
+function randomizePic() {
+  var picValue = Math.floor(Math.random() * 10);
+  detailImage.setAttribute('src', 'images/' + PIC_ARRAY[picValue] + '.jpg');
+}
 
 function setDetails(imageUrl, titleText) {
-  var detailImage = document.querySelector(DETAIL_IMAGE_SELECTOR);
-  var detailTitle = document.querySelector(DETAIL_TITLE_SELECTOR);
-
   detailImage.setAttribute('src', imageUrl);
   detailTitle.textContent = titleText;
 }
@@ -51,7 +57,6 @@ function showDetails() {
   setTimeout(function(){
     frame.classList.remove(TINY_EFFECT_CLASS);
   }, 50);
-
 }
 
 function addKeyPressHandler() {
@@ -64,6 +69,7 @@ function addKeyPressHandler() {
 }
 
 function initializeEvents() {
+  randomizePic();
   var thumbnails = getThumbnailsArray();
   thumbnails.forEach(function(thumbnail) {
     addThumbClickHandler(thumbnail);
@@ -72,11 +78,3 @@ function initializeEvents() {
 }
 
 initializeEvents();
-
-
-//
-// var xyz = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
-//
-// xyz.forEach(function(thumbnail) {
-//   addThumbClickHandler(thumbnail);
-// })
