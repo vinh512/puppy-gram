@@ -75,6 +75,13 @@ a {
   max-width: 120px;
   border: 2px solid rgb(100%, 100%, 100%); /* fallback value in case browser doesn't accept alpha */
   border: 2px solid rgba(100%, 100%, 100%, 0.3);
+
+  transition: transform 133ms ease-in-out;
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.2);
+
 }
 
 .detail-image-container {
@@ -87,6 +94,13 @@ a {
 .detail-image-frame {
   position: relative;
   text-align: center;
+
+  transition: transform 333ms;
+}
+
+.is-tiny {
+  transform: scale(0.001);
+  transition: transform 0ms;
 }
 
 .detail-image {
