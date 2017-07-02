@@ -48,7 +48,6 @@ a {
   padding: 20px; /*overrides default ul padding value which indents the li items */
   white-space: nowrap; /* prevents the thumbnails from wrapping to the next line */
   overflow-x: auto; /* adds a scroll bar if thumbnails extends container */
-
 }
 
 .thumbnail-title {

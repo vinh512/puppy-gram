@@ -10,28 +10,34 @@ var detailTitle = document.querySelector(DETAIL_TITLE_SELECTOR);
 var PIC_ARRAY = ['Ollie', 'Cotton', 'Max', 'Zeus_Emma', 'Lola',
                   'Bailey', 'Gatsby', 'Bisquick', 'Duke', 'Nina'];
 
+// randomly assigns a puppy pic as the main image
 function randomizePic() {
   var picValue = Math.floor(Math.random() * 10);
   detailImage.setAttribute('src', 'images/' + PIC_ARRAY[picValue] + '.jpg');
 }
 
+// provides main image container with the corresponding image and text
 function setDetails(imageUrl, titleText) {
   detailImage.setAttribute('src', imageUrl);
   detailTitle.textContent = titleText;
 }
 
+// gets data attribute value for the image
 function imageFromThumb(thumbnail) {
   return thumbnail.getAttribute('data-image-url');
 }
 
+// gets data attribute value for the image text
 function titleFromThumb(thumbnail) {
   return thumbnail.getAttribute('data-image-title');
 }
 
+// calls setDetails function passing function calls as arguments which return data attribute values
 function setDetailsFromThumb(thumbnail) {
   setDetails(imageFromThumb(thumbnail), titleFromThumb(thumbnail));
 }
 
+// adds eventListener to each thumbnail
 function addThumbClickHandler(thumb) {
   thumb.addEventListener('click', function(e) {
     e.preventDefault();
@@ -40,16 +46,19 @@ function addThumbClickHandler(thumb) {
   });
 }
 
+// converts thumbnails nodelist into an array
 function getThumbnailsArray() {
   var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
   var thumbnailsArray = [].slice.call(thumbnails);
   return thumbnailsArray;
 }
 
+// adds style declaration to the body resulting in a descendant selector that hides the main image
 function hideDetails() {
   document.body.classList.add(HIDDEN_DETAIL_CLASS);
 }
 
+// displays the main image in an expanding transition
 function showDetails() {
   var frame = document.querySelector(DETAIL_FRAME_SELECTOR);
   document.body.classList.remove(HIDDEN_DETAIL_CLASS);
@@ -59,6 +68,7 @@ function showDetails() {
   }, 50);
 }
 
+// hides main image upon pressing 'esc' key
 function addKeyPressHandler() {
   document.body.addEventListener('keyup', function(e) {
     e.preventDefault();
@@ -68,6 +78,7 @@ function addKeyPressHandler() {
   });
 }
 
+// runs the functions that gets the program rolling
 function initializeEvents() {
   randomizePic();
   var thumbnails = getThumbnailsArray();
@@ -77,4 +88,5 @@ function initializeEvents() {
   addKeyPressHandler();
 }
 
+// starts program
 initializeEvents();
