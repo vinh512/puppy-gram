@@ -21,10 +21,15 @@ a {
 }
 
 .logo-text {
-  background: white;
+  color: white;
+  background: #47ACB5;
   text-align: center;
   text-transform: uppercase;
   font-size: 40px;
+  margin-top: 0;
+  padding: 0.25em;
+  border-bottom: 2px solid #A9C0C2; /* fallback value in case browser doesn't accept alpha */
+  border-bottom: 2px solid rgba(100%, 100%, 100%, 0.3);
 }
 
 .main-content {
@@ -44,7 +49,6 @@ a {
   justify-content: space-between;
 
   list-style: none;
-  /*margin: 20px;*/
   padding: 20px; /*overrides default ul padding value which indents the li items */
   white-space: nowrap; /* prevents the thumbnails from wrapping to the next line */
   overflow-x: auto; /* adds a scroll bar if thumbnails extends container */
@@ -70,7 +74,7 @@ a {
   display: inline-block; /* puts the thumbnails on the same line */
   min-width: 120px;
   max-width: 120px;
-  border: 2px solid rgb(100%, 100%, 100%); /* fallback value in case browser doesn't accept alpha */
+  border: 2px solid #A9C0C2; /* fallback value in case browser doesn't accept alpha */
   border: 2px solid rgba(100%, 100%, 100%, 0.3);
 
   transition: transform 133ms ease-in-out;
